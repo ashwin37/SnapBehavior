@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SnapBehavior" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZu-vl-nnt">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                <state key="normal" title="Snap 2">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqH-ng-lfB">
+                                <rect key="frame" x="16" y="378" width="343" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sanp 3">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3T-oA-mFU">
+                                <rect key="frame" x="16" y="258" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Snap 1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sanp1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pdk-RK-6JU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="hqH-ng-lfB" secondAttribute="leading" id="2RH-2O-vrU"/>
+                            <constraint firstItem="wZu-vl-nnt" firstAttribute="top" secondItem="K3T-oA-mFU" secondAttribute="bottom" constant="30" id="7Wo-8S-zgS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="K3T-oA-mFU" secondAttribute="leading" id="Pwa-Ar-pBU"/>
+                            <constraint firstItem="hqH-ng-lfB" firstAttribute="top" secondItem="wZu-vl-nnt" secondAttribute="bottom" constant="30" id="Tsd-Uo-pjl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hqH-ng-lfB" secondAttribute="trailing" id="ULF-wm-H6c"/>
+                            <constraint firstItem="wZu-vl-nnt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="clp-Jc-RZc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wZu-vl-nnt" secondAttribute="leading" id="qEu-kD-y8A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wZu-vl-nnt" secondAttribute="trailing" id="rrl-nG-Vrc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K3T-oA-mFU" secondAttribute="trailing" id="wAT-88-of5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="snapBtn" destination="K3T-oA-mFU" collectionClass="NSMutableArray" id="doU-QM-wYM"/>
+                        <outletCollection property="snapBtn" destination="wZu-vl-nnt" collectionClass="NSMutableArray" id="kF9-1M-EWa"/>
+                        <outletCollection property="snapBtn" destination="hqH-ng-lfB" collectionClass="NSMutableArray" id="him-fy-hch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="136.28185907046478"/>
         </scene>
     </scenes>
 </document>
